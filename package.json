@@ -1,0 +1,22 @@
+{
+  "name": "loopqa_technical_eval",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crazycan543/LoopQA_Technical_Eval.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crazycan543/LoopQA_Technical_Eval/issues"
+  },
+  "homepage": "https://github.com/Crazycan543/LoopQA_Technical_Eval#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1"
+  }
+}
