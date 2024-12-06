@@ -12,11 +12,15 @@ test('Adaptible Test Case', async ({ page }) => {
     await page.getByRole('button', { name: 'Sign in' }).click();
 
     //navigate to different tabs
-    await page.getByRole('button', { name: data.applications[1].tab }).click();
+    await page.getByRole('button', { name: data.applications[0].tab }).click();
 
     //Verify task is in a given column
-
+    const todoSection = page.locator('.w-80:has-text("'+data.column[0].columnName+'")');
+    const taskCard = todoSection.locator('div:has-text("'+data.tasks[0].task+'") > h3').first();
+    await expect(taskCard).toHaveText(data.tasks[0].task);
 
     //Confirm tag(s) on a given task
-
+    //FIX ME
+    await expect(taskCard.locator('span.bg-blue-100')).toHaveText('Feature');
+    await expect(taskCard.locator('span.bg-orange-100')).toHaveText('High Priority');
   });

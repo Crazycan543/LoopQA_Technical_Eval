@@ -46,16 +46,20 @@
     ],
     "Tags" : [
         {
-            "Tag-Name" : "Feature"
+            "Tag-Name" : "Feature",
+            "color" : "blue"
         },
         {
-            "Tag-Name" : "High Priority"
+            "Tag-Name" : "High Priority",
+            "color" : "orange"
         },
         {
-            "Tag-Name" : "Bug"
+            "Tag-Name" : "Bug",
+            "color" : "red"
         },
         {
-            "Tag-Name" : "Design"
+            "Tag-Name" : "Design",
+            "color" : "purple"
         }
     ]
 }
