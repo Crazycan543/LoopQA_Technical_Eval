@@ -4,10 +4,10 @@
     "password" : "password123",
     "applications" : [
         {   
-            "tab" : "Web Application."
+            "tab" : "Web Application Main web"
         },
         {
-            "tab" : "Mobile Application."
+            "tab" : "Mobile Application Native"
         }
     ],
     "column" : [
