@@ -2,64 +2,48 @@
     "link" : "https://animated-gingersnap-8cf7f2.netlify.app/",
     "username" : "admin",
     "password" : "password123",
-    "applications" : [
-        {   
-            "tab" : "Web Application Main web"
+    "cases" : [
+        {
+          "title": "Verify Implement User Authentication",
+          "section": "Web Application Main web",
+          "task": "Implement user authentication",
+          "column": "To Do",
+          "tags": ["Feature", "High Priority"]
         },
         {
-            "tab" : "Mobile Application Native"
+          "title": "Verify Fix Navigation Bug",
+          "section": "Web Application Main web",
+          "task": "Fix navigation bug",
+          "column": "To Do",
+          "tags": ["Bug"]
+        },
+        {
+          "title": "Verify Design System Updates",
+          "section": "Web Application Main web",
+          "task": "Design system updates",
+          "column": "In Progress",
+          "tags": ["Design"]
+        },
+        {
+          "title": "Verify Push Notification System",
+          "section": "Mobile Application Native",
+          "task": "Push notification system",
+          "column": "To Do",
+          "tags": ["Feature"]
+        },
+        {
+          "title": "Verify Offline Mode",
+          "section": "Mobile Application Native",
+          "task": "Offline mode",
+          "column": "In Progress",
+          "tags": ["Feature", "High Priority"]
+        },
+        {
+          "title": "Verify App Icon Design",
+          "section": "Mobile Application Native",
+          "task": "App icon design",
+          "column": "Done",
+          "tags": ["Design"]
         }
-    ],
-    "column" : [
-        {
-            "columnName" : "To Do"
-        },
-        {
-            "columnName" : "In Progress"
-        },
-        {
-            "columnName" : "Review"
-        },
-        {
-            "columnName" : "Done"
-        }
-    ],
-    "tasks" : [
-        {
-            "task" : "Implement user authentication"
-        },
-        {
-            "task" : "Fix navigation bug"
-        },
-        {
-            "task" : "Design system updates"
-        },
-        {
-            "task" : "Push notification system"
-        },
-        {
-            "task" : "Offline mode"
-        },
-        {
-            "task" : "App icon design"
-        }
-    ],
-    "Tags" : [
-        {
-            "Tag-Name" : "Feature",
-            "color" : "blue"
-        },
-        {
-            "Tag-Name" : "High Priority",
-            "color" : "orange"
-        },
-        {
-            "Tag-Name" : "Bug",
-            "color" : "red"
-        },
-        {
-            "Tag-Name" : "Design",
-            "color" : "purple"
-        }
-    ]
+      ]
 }

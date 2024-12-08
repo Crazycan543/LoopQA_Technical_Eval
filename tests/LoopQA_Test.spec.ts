@@ -1,26 +1,29 @@
 import {test, expect,} from '@playwright/test';
-import * as data from '../json_objects/test_info.json';
+import * as testCase from '../json_objects/test_info.json';
 
-test('Adaptible Test Case', async ({ page }) => {
-    await page.goto(data.link); //Accesses the website
+for( const i in testCase.cases){// loop through all test cases in json file
+test('Adaptible Test Case ' + i.toString(), async ({ page }) => {
+    await page.goto(testCase.link); //Accesses the website
 
     //Sign into the website using given credentials
     await page.getByLabel('Username').click();
-    await page.getByLabel('Username').fill(data.username);
+    await page.getByLabel('Username').fill(testCase.username);
     await page.getByLabel('Password').click();
-    await page.getByLabel('Password').fill(data.password);
+    await page.getByLabel('Password').fill(testCase.password);
     await page.getByRole('button', { name: 'Sign in' }).click();
 
     //navigate to different tabs
-    await page.getByRole('button', { name: data.applications[0].tab }).click();
+    await page.getByRole('button', { name: testCase.cases[i].section }).click();
+    // Verify column and tags
+    const column = await page.locator('#root div').filter({ hasText: testCase.cases[i].column }).first();
+    const columnText = await column.textContent();
+    await expect(columnText).toContain(testCase.cases[i].task);
 
-    //Verify task is in a given column
-    const todoSection = page.locator('.w-80:has-text("'+data.column[0].columnName+'")');
-    const taskCard = todoSection.locator('div:has-text("'+data.tasks[0].task+'") > h3').first();
-    await expect(taskCard).toHaveText(data.tasks[0].task);
+    const taskBox = page.getByText(testCase.cases[i].task).locator('xpath=..');
+    
+    for(const tags in testCase.cases[i].tags){
+      await expect(taskBox).toContainText(testCase.cases[i].tags[tags]);
+    }
 
-    //Confirm tag(s) on a given task
-    //FIX ME
-    await expect(taskCard.locator('span.bg-blue-100')).toHaveText('Feature');
-    await expect(taskCard.locator('span.bg-orange-100')).toHaveText('High Priority');
-  });
+    await page.close();
+  });}
